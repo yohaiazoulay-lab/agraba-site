@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agraba Font</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sticker hint -->
+    <div class="sticker" id="sticker">
+        <span class="sticker-text" id="stickerText">הקליקו על כל אות כדי לשנות גרסה!</span>
+    </div>
+
+    <!-- Header strip with logo -->
+    <header class="header">
+        <div class="logo" id="logo">אגרבה</div>
+    </header>
+
+    <!-- Main content area - two columns -->
+    <main class="content">
+        <!-- Playground section - 75% width -->
+        <section class="playground-section">
+            <div class="section-headline">בואו לנסות</div>
+            <div class="section-content">
+                <div class="text-container" id="textContainer">
+                    <span class="cursor" id="cursor"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About section - 25% width -->
+        <section class="about-section">
+            <div class="section-headline">אודות</div>
+            <div class="section-content">
+                <p class="about-text">אגרבה הוא פונט שהתפתח תוך כדי מחקר על כתב יד ספרדי רהוט מעלק, מתוך מחשבה לייצר לו גרסה קריאה ועדכנית. תוך כדי שירבוטים ואימון היד בכתיבת כתב המעלק, התפתחו הקימורים והעיגולים שמאפיינים את הפונט, מציע שתי אופציות קריאה: קריא ולא קריא.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Height slider control -->
+    <div class="slider-container">
+        <input type="range" id="heightSlider" min="20" max="180" value="56">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

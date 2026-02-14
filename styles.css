@@ -1,0 +1,300 @@
+/* Load both font weights */
+@font-face {
+    font-family: 'Agraba';
+    src: url('font/AgrabaFamily-Readable.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Agraba';
+    src: url('font/AgrabaFamily-Unreadable.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: rgb(0,232,204);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Agraba', sans-serif;
+}
+
+/* Header strip */
+.header {
+    width: 100%;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: flex-start; /* In RTL, flex-start is the right side */
+}
+
+/* Logo - now inside header */
+.logo {
+    font-size: 4rem;
+    /* line-height: 1.2; */
+    color: #000000;
+    display: flex;
+    direction: rtl;
+}
+
+/* Main content area - two columns */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 24px;
+    padding-bottom: 80px; /* Space for the slider */
+    gap: 60px;
+    overflow: hidden;
+    justify-content: space-evenly;
+}
+
+/* Playground section - 75% width */
+.playground-section {
+    flex: 0 0 75%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* About section - 25% width */
+.about-section {
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Section headline strips - text right-aligned with line after */
+.section-headline {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 16px;
+    padding: 12px 0;
+}
+
+/* Line only after the text (left side in RTL) */
+.section-headline::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background-color: #000000;
+}
+
+/* Section content wrapper */
+.section-content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Text container - playground area */
+.text-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align to right in RTL */
+    flex-wrap: wrap;
+    align-content: flex-start; /* Pack lines tightly at the top */
+    width: 100%;
+    line-height: 0.9;
+    color: #000000;
+    overflow: auto;
+    padding: 16px;
+}
+
+/* About text */
+.about-text {
+    font-size: 2.2rem;
+    color: #000000;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+/* Space character in letterized text */
+/* .letter-space {
+    width: 0.3em;
+} */
+
+/* Word container - keeps letters together, prevents mid-word breaks */
+.word {
+    display: inline-flex;
+    white-space: nowrap;
+    align-items: center; /* Center letters of different sizes vertically */
+}
+
+/* Each letter wrapper - handles overflow clipping for animation */
+.letter-wrapper {
+    display: inline-flex;
+    align-items: flex-end;
+    overflow-x: visible;
+    overflow-y: hidden;
+    position: relative;
+    vertical-align: bottom;
+}
+
+/* The actual letter */
+.letter {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+    font-weight: 400;
+    user-select: none;
+}
+
+.letter:hover {
+    opacity: 0.7;
+}
+
+/* Weight classes */
+.letter.weight-readable {
+    font-weight: 400;
+}
+
+.letter.weight-unreadable {
+    font-weight: 700;
+}
+
+/* Disable transition temporarily */
+.letter.no-transition {
+    transition: none !important;
+}
+
+/* Animation states - going UP (Readable → Unreadable) */
+.letter.animate-out-up {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.letter.animate-in-up {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+/* Animation states - going DOWN (Unreadable → Readable) */
+.letter.animate-out-down {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.letter.animate-in-down {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* Space character */
+/* .letter.space {
+    width: 0.3em;
+} */
+
+/* Height slider */
+.slider-container {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(-1); /* Flip slider - right = bigger */
+}
+
+#heightSlider {
+    width: 200px;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+#heightSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: rgb(0,232,204);
+    border: 2px solid #000000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#heightSlider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: transparent;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Blinking cursor */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 56px;
+    background-color: #000000;
+    margin-right: 2px;
+    animation: blink 1s infinite;
+    vertical-align: bottom;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Sticker hint */
+.sticker {
+    position: fixed;
+    top: 8vh;
+    left: 16vh;
+    width: 180px;
+    height: 180px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 100;
+    transform: rotate(-12deg);
+}
+
+.sticker-text {
+    color: #ffffff;
+    font-size: 1.3rem;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Override letter colors inside sticker */
+.sticker .letter {
+    color: #ffffff;
+}
+
+.sticker .letter:hover {
+    opacity: 0.7;
+}
