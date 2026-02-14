@@ -1,17 +1,14 @@
 /* Load both font weights */
 @font-face {
-    font-family: 'Agraba';
-    src: url('font/AgrabaFamily-Readable.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
+    font-family: "AgrabaReadable";
+    src: url("fonts/AgrabaFamily-Readable.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'Agraba';
-    src: url('font/AgrabaFamily-Unreadable.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
+    font-family: "AgrabaUnreadable";
+    src: url("fonts/AgrabaFamily-Unreadable.otf") format("opentype");
 }
+
 
 /* Reset and base styles */
 * {
