@@ -300,3 +300,7 @@ body {
 body {
     font-family: "AgrabaReadable", sans-serif;
 }
+body {
+    font-family: "AgrabaReadable";
+    font-variant-ligatures: none;
+}
