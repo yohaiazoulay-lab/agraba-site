@@ -169,6 +169,11 @@ body {
 .letter.weight-unreadable {
     font-family: "AgrabaUnreadable";
 }
+.letter.weight-unreadable {
+    font-family: "AgrabaUnreadable";
+    color: red;
+}
+
 
 /* Disable transition temporarily */
 .letter.no-transition {
