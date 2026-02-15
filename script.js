@@ -78,11 +78,11 @@ document.querySelectorAll('.about-text').forEach(aboutText => {
 
 // Add default text to playground on page load
 function addDefaultPlaygroundText() {
-    const defaultText = 'אי שם מעבר לקשת';
+    const defaultText = 'אי שם מעבר לקשת בענן';
     
     // Set slider to maximum for biggest font
-    currentHeight = 180;
-    heightSlider.value = 180;
+    currentHeight = 220;
+    heightSlider.value = 220;
     cursor.style.height = currentHeight + 'px';
     
     // Add each character from the default text
