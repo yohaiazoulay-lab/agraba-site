@@ -111,6 +111,7 @@ body {
     flex-wrap: wrap;
     align-content: flex-start; /* Pack lines tightly at the top */
     width: 100%;
+   font-size: 15rem;
     line-height: 0.9;
     color: #000000;
     overflow: visible;
