@@ -164,11 +164,11 @@ body {
 
 /* Weight classes */
 .letter.weight-readable {
-    font-weight: 400;
+    font-family: "AgrabaReadable";
 }
 
 .letter.weight-unreadable {
-    font-weight: 700;
+    font-family: "AgrabaUnreadable";
 }
 
 /* Disable transition temporarily */
