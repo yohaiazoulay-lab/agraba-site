@@ -301,14 +301,12 @@ body {
   font-family: "AgrabaReadable", sans-serif;
   font-variant-ligatures: none;
 }
-
-/* קריא */
 .letter.weight-readable {
   font-family: "AgrabaReadable" !important;
 }
 
-/* לא קריא */
 .letter.weight-unreadable {
   font-family: "AgrabaUnreadable" !important;
+  color: inherit;
 }
 
