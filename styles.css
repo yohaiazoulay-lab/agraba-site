@@ -1,16 +1,15 @@
 /* Load both font weights */
 @font-face {
-    font-family: "AgrabaReadable";
-    src: url("fonts/AgrabaFamily-Readable.woff") format("woff");
+  font-family: "AgrabaReadable";
+  src: url("fonts/AgrabaFamily-Readable.woff") format("woff");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "AgrabaUnreadable";
-    src: url("fonts/AgrabaFamily-Unreadable.woff") format("woff");
+  font-family: "AgrabaUnreadable";
+  src: url("fonts/AgrabaFamily-Unreadable.woff") format("woff");
+  font-display: swap;
 }
-
-
-
 
 /* Reset and base styles */
 * {
@@ -296,11 +295,11 @@ body {
 
 .sticker .letter:hover {
     opacity: 0.7;
-}
-body {
-    font-family: "AgrabaReadable", sans-serif;
-}
-body {
-    font-family: "AgrabaReadable";
-    font-variant-ligatures: none;
+    
+}body {
+  background-color: rgb(0,232,204);
+  display: flex;
+  flex-direction: column;
+  font-family: "AgrabaReadable", sans-serif;
+  font-variant-ligatures: none;
 }
