@@ -81,8 +81,8 @@ function addDefaultPlaygroundText() {
     const defaultText = 'אי שם מעבר לקשת בענן';
     
     // Set slider to maximum for biggest font
-    currentHeight = 220;
-    heightSlider.value = 220;
+    currentHeight = 250;
+    heightSlider.value = 250;
     cursor.style.height = currentHeight + 'px';
     
     // Add each character from the default text
